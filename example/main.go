@@ -17,6 +17,8 @@ func main() {
 		TwilightConvention: prayer.Kemenag(),
 		AsrConvention:      prayer.Shafii,
 		PreciseToSeconds:   true,
+		StartDate:          time.Now(),
+		EndDate:            time.Now().AddDate(0, 1, 0),
 	}, 2023)
 	print(jakartaSchedules)
 
@@ -31,6 +33,8 @@ func main() {
 		AsrConvention:       prayer.Shafii,
 		HighLatitudeAdapter: prayer.NearestLatitude(),
 		PreciseToSeconds:    true,
+		StartDate:           time.Now(),
+		EndDate:             time.Now().AddDate(0, 1, 0),
 	}, 2023)
 	print(londonSchedules)
 }

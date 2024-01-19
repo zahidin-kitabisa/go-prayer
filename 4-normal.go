@@ -2,7 +2,6 @@ package prayer
 
 import (
 	"math"
-	"time"
 
 	"github.com/hablullah/go-sampa"
 )
@@ -44,8 +43,8 @@ func calcNormal(cfg Config, year int) ([]Schedule, int) {
 	}}
 
 	// Calculate schedules for each day in a year.
-	start := time.Date(year, 1, 1, 0, 0, 0, 0, cfg.Timezone)
-	limit := start.AddDate(1, 0, 0)
+	start := cfg.StartDate.In(cfg.Timezone)
+	limit := cfg.EndDate.AddDate(0, 0, 1).In(cfg.Timezone)
 	nDays := int(limit.Sub(start).Hours() / 24)
 
 	// Create slice to contain result

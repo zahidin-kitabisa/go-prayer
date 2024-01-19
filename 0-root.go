@@ -104,6 +104,10 @@ type Config struct {
 
 	// PreciseToSeconds specify whether output time will omit the seconds or not.
 	PreciseToSeconds bool
+
+	// Startdate specify for calculate pray with range stardate to enddate
+	StartDate time.Time
+	EndDate   time.Time
 }
 
 // Calculate calculates the prayer time for the entire year with specified configuration.
